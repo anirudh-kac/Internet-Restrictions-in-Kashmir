@@ -14,7 +14,7 @@ def match(text,keywords):
 #The news pages
 base_url = "https://www.greaterkashmir.com/latest/page/"
 
-keywords=["internet","4G","2G","snapped","network","communication"]
+keywords=["internet","4G","2G","snapped"]
 
 ##almost 1000 pages are present on gk website
 for i in range(2,100):
@@ -47,9 +47,9 @@ for i in range(2,100):
                     print(para.text)
                     print("----------------------------------------------")
 
-                    with open("list.csv","w") as f:
+                    with open("gk_internet.csv","w") as f:
                         csv_writer = writer(f)
-                        csv_writer.writerow([headline,time,para.text])
+                        csv_writer.writerow([headline,time,para.text,link])
                     break
 
         
